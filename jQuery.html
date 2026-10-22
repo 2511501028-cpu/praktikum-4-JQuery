@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Mahasiswa</title>
+
+    <!-- Menggunakan jQuery Lokal -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- Menghubungkan ke skrip eksternal -->
+    <script src="script.js" defer></script>
+
+    <!-- Mengambil Font Modern dari Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* mengatur latar belakang */
+      body {
+        font-family: "Poppins", sans-serif;
+        /* Latar belakang gradasi */
+        background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+        min-height: 100vh; /*tinggi minimum elemen body adalah 100% tinggi layar (viewport height) */
+        display: flex; /*menempatkan konten di tengah layar*/
+        justify-content: center;
+        align-items: center;
+        color: #333; /* mengatur warna */
+      }
+      /* mengatur kotak wadah profile */
+      .container {
+        background: rgba(255, 255, 255, 0.95); /* mengatur warna background */
+        width: 100%;
+        max-width: 500px;
+        padding: 35px 25px;
+        border-radius: 20px;
+
+        /* Bayangan / shadow */
+        box-shadow: 0 15px 35px rgba(33, 7, 129, 0.34);
+        text-align: center;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Styling Judul */
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #2c3e50;
+        transition: color 0.3s ease;
+      }
+      /* mengatur ukuran, warna, dan tata letak pada heading 2 */
+      h2 {
+        font-size: 20px;
+        color: #2c3e50;
+        margin-top: 10px;
+      }
+
+      p {
+        color: #050404; /* mengatur warna pada paragraf */
+        font-size: 14px; /* mengatur ukuran font pada paragraf */
+      }
+
+      /* Foto Profil */
+      .foto-profil {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px auto;
+        font-size: 32px;
+        font-weight: bold;
+        /* Animasi saat efek hover */
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+      }
+
+      /* Styling Tombol Modern */
+      .tombol-group {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      /* untuk mengatur tombol */
+      button {
+        padding: 12px 20px;
+        background: #667eea;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer; /*Saat diarahkan dengan mouse, kursor berubah jadi tangan (menunjukkan tombol bisa diklik)*/
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+      }
+
+      button:hover {
+        background: #5a6fd1;
+        transform: translateY(-3px); /* Efek melayang saat di-hover */
+        box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      button:active {
+        transform: translateY(1px); /* Efek ditekan */
+      }
+
+      /* Kotak Informasi Detail */
+      .biodata {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+        border-left: 5px solid #667eea;
+        text-align: left;
+      }
+
+      .biodata h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .biodata p {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="judul-halaman">Profil Mahasiswa</h1>
+
+      <!-- Elemen Foto Profil -->
+      <div id="foto" class="foto-profil">IT</div>
+
+      <h2 id="nama-mahasiswa">Dinda Shafa Nalaratih</h2>
+      <p id="prodi-mahasiswa">Program Studi: Teknologi Informasi</p>
+
+      <!-- Tombol Interaktif -->
+      <div class="tombol-group">
+        <button id="btn-mode">Ubah Warna Judul</button>
+        <button id="btn-toggle-bio">Sembunyikan / Tampilkan Bio</button>
+        <button id="btn-animasi">Animasi Foto</button>
+      </div>
+
+      <!-- Kotak Informasi Detail -->
+      <div id="box-biodata" class="biodata">
+        <!-- memanggil wadah untuk detail informasi -->
+        <h3>Detail Informasi</h3>
+        <p id="teks-bio"><strong>NIM:</strong> 2511501028</p>
+        <p><strong>Semester:</strong> 3</p>
+        <p id="status-aktif"><strong>Status:</strong> Mahasiswa Aktif</p>
+      </div>
+    </div>
+  </body>
+</html>
